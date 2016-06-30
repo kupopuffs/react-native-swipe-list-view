@@ -40,7 +40,12 @@ class SwipeListView extends Component {
 		}
 		this.openCellId = id;
 		this._rows[this.openCellId].closeRow();
-		this.props.onRowOpen && this.props.onRowOpen(id);
+		var dir = 0;
+		// swipe right
+		if (this._rows[this.openCellId].state.translateX._value >= 0) {
+			dir = 1;
+		}
+		this.props.onRowOpen && this.props.onRowOpen(id, dir);
 	}
 
 	onRowPress(id) {
