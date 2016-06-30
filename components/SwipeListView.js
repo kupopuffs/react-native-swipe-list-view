@@ -39,7 +39,7 @@ class SwipeListView extends Component {
 			this.safeCloseOpenRow();
 		}
 		this.openCellId = id;
-		this.props.onRowOpen && this.props.onRowOpen();
+		this.props.onRowOpen && this.props.onRowOpen(id);
 	}
 
 	onRowPress(id) {
